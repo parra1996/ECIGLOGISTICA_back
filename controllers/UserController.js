@@ -83,7 +83,6 @@ UserController.login = (req, res) => {
                 let token = jwt.sign({ usuario: element }, authConfig.secret, {
                     expiresIn: authConfig.expires
                 });
-
                 res.json({
                     usuario: element,
                     token: token

@@ -5,7 +5,6 @@ const {secret} = require('../config/auth')
 module.exports = (req, res, next) => {
     let token = req.headers.authorization.split(' ')[1];
     let {usuario} = jwt.decode(token, secret)
-    console.log(secret)
     try {
         if (usuario.rol == 1) {
             next();

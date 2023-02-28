@@ -25,7 +25,6 @@ ProductsAquiredController.get_by_id = async (req,res) => {
 
     let id = req.params.id
 
-    console.log(id)
     let consulta = ` SELECT productaquireds.id ,productaquireds.name, productaquireds.observations from products INNER JOIN productaquireds
     ON products.id = productaquireds.productID WHERE products.id = ${id} `;
     let resultado = await ProductAquired.sequelize.query(consulta,{
